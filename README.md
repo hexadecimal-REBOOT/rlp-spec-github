@@ -1,39 +1,31 @@
 # Reasoning Ledger Protocol (RLP)
 
-**An append-only behavioral memory protocol for AI agents**
+**Reasoning Ledger Protocol (RLP)** is an append-only behavioral memory log for LLM agents. It defines a minimal schema and commit interface for recording, promoting, and reusing successful action patterns without retraining. RLP underlies the four-experiment program in *"Promotion Without Retrieval: Gene Monopoly, Confidence Asymmetry, and Action Deserialization Failures in Behavioral Memory Systems"* (v4), and its post-publication Experiment 5 shows the protocol crossing break-even by 4× in live deployment while reproducing the gene-concentration failure mode as a diagnostic signal, not an optimization target.
 
 [![Apache 2.0 License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](LICENSE)
-[![arXiv Paper](https://img.shields.io/badge/arXiv-2404.xxxxx-b31b1b.svg)](https://arxiv.org/abs/2404.xxxxx) [![GitHub](https://img.shields.io/badge/GitHub-reasoning--ledger--protocol-blue)](https://github.com/YOUR_USERNAME/reasoning-ledger-protocol)
+[![arXiv Paper](https://img.shields.io/badge/arXiv-2404.xxxxx-b31b1b.svg)](https://arxiv.org/abs/2404.xxxxx)
 
 ## Overview
 
 The Reasoning Ledger Protocol (RLP) defines an append-only, auditable framework for recording and promoting behavioral patterns in AI systems. It enables agents to learn from experience without model retraining by capturing successful behavioral sequences as immutable "genes" with cryptographic lineage.
 
-## Key Features
-
-- **Append-only ledger** - Immutable record of behavioral patterns
-- **Cryptographic provenance** - Full lineage tracking for auditability
-- **Economic viability constraints** - Built-in cost/reuse analysis
-- **Standardized schema** - JSON-based commit structure
-- **Domain isolation** - Multi-level behavioral scoping
-
-## Specification
-
-The complete protocol specification is available in:
-- **[reasoning-ledger-protocol-v1.0.md](reasoning-ledger-protocol-v1.0.md)** - Full protocol documentation
-- **[rlp-schema.json](rlp-schema.json)** - JSON Schema for RLP commits
+This repository contains the complete protocol specification, JSON Schema for commit validation, and example validation scripts. The protocol is designed to be implementation-agnostic while ensuring interoperability across different behavioral memory systems.
 
 ## Academic Reference
 
-This implementation accompanies the paper:
+This specification accompanies the paper:
 
 **"Promotion Without Retrieval: Gene Monopoly, Confidence Asymmetry, and Action Deserialization Failures in Behavioral Memory Systems"**  
 *Yannis Dominique, VDSX Cloud*  
 [arXiv:2404.xxxxx](https://arxiv.org/abs/2404.xxxxx) (v4 includes Experiment 4 results)
 
-**Download**: [rlp-paper-v4.pdf](rlp-paper-v4.pdf) - Complete paper with Experiment 4 results
+**Post-publication validation**: As of April 8, 2026, the production system has accumulated 12 `dna_match_valid` events (24,432 tokens saved) in the 9.5 hours following Experiment 4 completion, crossing the break-even threshold by a factor of four and confirming the economic viability of the corrected architecture.
 
-The paper presents empirical results from four sequential experiments (36+ hours runtime) testing RLP implementation, identifying ten distinct failure modes in behavioral memory systems. Version 4 includes complete Experiment 4 results demonstrating break-even achievement with 8,144 tokens saved.
+## Specification
+
+- **[reasoning-ledger-protocol-v1.0.md](reasoning-ledger-protocol-v1.0.md)** - Complete protocol documentation
+- **[rlp-schema.json](rlp-schema.json)** - JSON Schema for RLP commit validation
+- **[validate-example.py](validate-example.py)** - Example validation script
 
 ## Quick Start
 
