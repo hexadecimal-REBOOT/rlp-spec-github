@@ -3,7 +3,7 @@
 **An append-only behavioral memory protocol for AI agents**
 
 [![Apache 2.0 License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](LICENSE)
-[![arXiv Paper](https://img.shields.io/badge/arXiv-2404.xxxxx-b31b1b.svg)](https://arxiv.org/abs/2404.xxxxx)
+[![arXiv Paper](https://img.shields.io/badge/arXiv-2404.xxxxx-b31b1b.svg)](https://arxiv.org/abs/2404.xxxxx) [![GitHub](https://img.shields.io/badge/GitHub-reasoning--ledger--protocol-blue)](https://github.com/YOUR_USERNAME/reasoning-ledger-protocol)
 
 ## Overview
 
@@ -29,9 +29,11 @@ This implementation accompanies the paper:
 
 **"Promotion Without Retrieval: Gene Monopoly, Confidence Asymmetry, and Action Deserialization Failures in Behavioral Memory Systems"**  
 *Yannis Dominique, VDSX Cloud*  
-[arXiv:2404.xxxxx](https://arxiv.org/abs/2404.xxxxx)
+[arXiv:2404.xxxxx](https://arxiv.org/abs/2404.xxxxx) (v4 includes Experiment 4 results)
 
-The paper presents empirical results from four sequential experiments (36+ hours runtime) testing RLP implementation, identifying ten distinct failure modes in behavioral memory systems.
+**Download**: [rlp-paper-v4.pdf](rlp-paper-v4.pdf) - Complete paper with Experiment 4 results
+
+The paper presents empirical results from four sequential experiments (36+ hours runtime) testing RLP implementation, identifying ten distinct failure modes in behavioral memory systems. Version 4 includes complete Experiment 4 results demonstrating break-even achievement with 8,144 tokens saved.
 
 ## Quick Start
 
