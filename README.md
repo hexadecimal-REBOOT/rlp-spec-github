@@ -1,0 +1,124 @@
+# Reasoning Ledger Protocol (RLP)
+
+**An append-only behavioral memory protocol for AI agents**
+
+[![Apache 2.0 License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](LICENSE)
+[![arXiv Paper](https://img.shields.io/badge/arXiv-2404.xxxxx-b31b1b.svg)](https://arxiv.org/abs/2404.xxxxx)
+
+## Overview
+
+The Reasoning Ledger Protocol (RLP) defines an append-only, auditable framework for recording and promoting behavioral patterns in AI systems. It enables agents to learn from experience without model retraining by capturing successful behavioral sequences as immutable "genes" with cryptographic lineage.
+
+## Key Features
+
+- **Append-only ledger** - Immutable record of behavioral patterns
+- **Cryptographic provenance** - Full lineage tracking for auditability
+- **Economic viability constraints** - Built-in cost/reuse analysis
+- **Standardized schema** - JSON-based commit structure
+- **Domain isolation** - Multi-level behavioral scoping
+
+## Specification
+
+The complete protocol specification is available in:
+- **[reasoning-ledger-protocol-v1.0.md](reasoning-ledger-protocol-v1.0.md)** - Full protocol documentation
+- **[rlp-schema.json](rlp-schema.json)** - JSON Schema for RLP commits
+
+## Academic Reference
+
+This implementation accompanies the paper:
+
+**"Promotion Without Retrieval: Gene Monopoly, Confidence Asymmetry, and Action Deserialization Failures in Behavioral Memory Systems"**  
+*Yannis Dominique, VDSX Cloud*  
+[arXiv:2404.xxxxx](https://arxiv.org/abs/2404.xxxxx)
+
+The paper presents empirical results from four sequential experiments (36+ hours runtime) testing RLP implementation, identifying ten distinct failure modes in behavioral memory systems.
+
+## Quick Start
+
+### Schema Validation
+
+Validate RLP commits against the JSON Schema:
+
+```bash
+# Using Python
+python3 -m json.tool your-commit.json | python3 -c "
+import json, sys
+from jsonschema import validate
+schema = json.load(open('rlp-schema.json'))
+data = json.load(sys.stdin)
+validate(instance=data, schema=schema)
+print('✓ Valid RLP commit')
+"
+```
+
+### Basic Commit Structure
+
+```json
+{
+  "rlp_version": "1.0",
+  "commit_type": "gene_promotion",
+  "timestamp": "2024-04-08T04:30:00Z",
+  "gene": {
+    "id": "research:abc123",
+    "domain": "research",
+    "trigger": "search for machine learning papers",
+    "action": "navigate to https://arxiv.org and search",
+    "evidence": {
+      "first_observed": "2024-04-08T04:15:00Z",
+      "success_count": 3,
+      "token_savings": 2036
+    }
+  },
+  "provenance": {
+    "previous_commit": "sha256:abc123...",
+    "system_fingerprint": "jetson-orin-001"
+  }
+}
+```
+
+## Architecture
+
+RLP operates at three architectural levels:
+
+1. **Ledger Layer** - Append-only commit storage with cryptographic hashing
+2. **Promotion Layer** - Evidence-based gene promotion with economic thresholds
+3. **Retrieval Layer** - Context-aware behavioral matching with domain isolation
+
+## Use Cases
+
+- **AI agent memory systems** - Persistent behavioral learning
+- **Auditable AI operations** - Regulatory compliance and transparency
+- **Multi-agent coordination** - Shared behavioral libraries
+- **Edge AI deployment** - Lightweight, local memory systems
+
+## License
+
+Copyright 2024 VDSX Cloud
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+
+## Reference Implementation
+
+MumpixDB provides the reference implementation of RLP with production-grade features including DNA runtime matching, ε-arch exploration, and action validation guards.
+
+For commercial deployment and enterprise features, visit [mumpix.com](https://mumpix.com).
+
+## Contributing
+
+While the core protocol is stable, we welcome:
+- Schema extensions and improvements
+- Implementation feedback
+- Academic collaborations
+- Security audits
+
+Please open issues for discussion before submitting major changes.
