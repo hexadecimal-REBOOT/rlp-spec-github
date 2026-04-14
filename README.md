@@ -2,10 +2,29 @@
 
 ![Reasoning Ledger Protocol banner](assets/rlp-banner.svg)
 
-**Reasoning Ledger Protocol (RLP)** is an append-only behavioral memory log for LLM agents. It defines a minimal schema and commit interface for recording, promoting, and reusing successful action patterns without retraining. RLP underlies the six-experiment empirical study in *"Promotion Without Retrieval: Gene Monopoly, Confidence Asymmetry, and the Specification-Implementation Gap in Behavioral Memory Systems"* (v11), which culminates in Experiment 6 showing the protocol crossing break-even in live deployment under calibrated decay.
+**Reasoning Ledger Protocol (RLP)** is an append-only protocol for auditable behavioral memory and reuse in AI agents.
+
+This repository is the public companion to the `v11` paper, *"Promotion Without Retrieval: Gene Monopoly, Confidence Asymmetry, and the Specification-Implementation Gap in Behavioral Memory Systems."* It is designed so a reader can open the repo, read the paper, run the public verification flow, and confirm that the published protocol artifacts and reported headline metrics are internally consistent.
 
 [![Apache 2.0 License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](LICENSE)
 [![arXiv Paper](https://img.shields.io/badge/arXiv-2404.xxxxx-b31b1b.svg)](https://arxiv.org/abs/2404.xxxxx)
+[![Paper PDF](https://img.shields.io/badge/PDF-v11%20final-1f6feb.svg)](rlp-paper-v11.pdf)
+
+## Start Here
+
+- **Read the paper**: [rlp-paper-v11.pdf](rlp-paper-v11.pdf)
+- **Verify the public artifacts**: `bash verify-public.sh`
+- **Read the protocol spec**: [reasoning-ledger-protocol-v1.0.md](reasoning-ledger-protocol-v1.0.md)
+- **Inspect the schema**: [rlp-schema.json](rlp-schema.json)
+
+**What this repo proves**
+
+1. The public RLP protocol artifacts validate and run.
+2. The paper's public numerical claims reconcile from the reported results.
+
+**What this repo does not include**
+
+Production retrieval/runtime code is intentionally omitted. This repository is for protocol publication, paper verification, and public reproducibility of the reported artifacts.
 
 ## Overview
 
