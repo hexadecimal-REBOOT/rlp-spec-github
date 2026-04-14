@@ -1,0 +1,37 @@
+<svg width="1280" height="640" viewBox="0 0 1280 640" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">Reasoning Ledger Protocol Banner</title>
+  <desc id="desc">Decorative banner for the Reasoning Ledger Protocol repository.</desc>
+  <rect width="1280" height="640" fill="#0B1020"/>
+  <rect x="40" y="40" width="1200" height="560" rx="28" fill="url(#bg)"/>
+  <circle cx="1088" cy="124" r="140" fill="#2B5FFF" fill-opacity="0.18"/>
+  <circle cx="180" cy="540" r="190" fill="#00C2A8" fill-opacity="0.12"/>
+  <path d="M145 178H506" stroke="#6EE7D8" stroke-width="10" stroke-linecap="round"/>
+  <path d="M145 242H618" stroke="#6EE7D8" stroke-width="10" stroke-linecap="round" opacity="0.78"/>
+  <path d="M145 306H564" stroke="#6EE7D8" stroke-width="10" stroke-linecap="round" opacity="0.52"/>
+  <rect x="770" y="144" width="254" height="180" rx="22" fill="#0F172A" stroke="#3557D6" stroke-width="2"/>
+  <rect x="866" y="220" width="254" height="180" rx="22" fill="#111827" stroke="#3557D6" stroke-width="2"/>
+  <rect x="962" y="296" width="158" height="180" rx="22" fill="#0F172A" stroke="#3557D6" stroke-width="2"/>
+  <path d="M894 278L991 348" stroke="#7C98FF" stroke-width="6" stroke-linecap="round"/>
+  <path d="M894 278L894 362" stroke="#7C98FF" stroke-width="6" stroke-linecap="round"/>
+  <path d="M991 348L991 430" stroke="#7C98FF" stroke-width="6" stroke-linecap="round"/>
+  <path d="M257 418H735" stroke="#23304F" stroke-width="2" stroke-dasharray="10 10"/>
+  <circle cx="257" cy="418" r="10" fill="#00C2A8"/>
+  <circle cx="416" cy="418" r="10" fill="#5AA1FF"/>
+  <circle cx="575" cy="418" r="10" fill="#8B7CFF"/>
+  <circle cx="735" cy="418" r="10" fill="#F2C94C"/>
+  <text x="145" y="438" fill="white" font-family="Arial, Helvetica, sans-serif" font-size="74" font-weight="700" letter-spacing="-1.2">
+    Reasoning Ledger Protocol
+  </text>
+  <text x="145" y="492" fill="#B8C4E6" font-family="Arial, Helvetica, sans-serif" font-size="28">
+    Append-only behavioral memory for auditable AI agent reuse
+  </text>
+  <text x="145" y="548" fill="#7F8DB4" font-family="Arial, Helvetica, sans-serif" font-size="22">
+    Public protocol, schema, and verification artifacts for the accompanying paper
+  </text>
+  <defs>
+    <linearGradient id="bg" x1="77" y1="63" x2="1188" y2="593" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#11182D"/>
+      <stop offset="1" stop-color="#0E1530"/>
+    </linearGradient>
+  </defs>
+</svg>

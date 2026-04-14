@@ -1,5 +1,7 @@
 # Reasoning Ledger Protocol (RLP)
 
+![Reasoning Ledger Protocol banner](assets/rlp-banner.svg)
+
 **Reasoning Ledger Protocol (RLP)** is an append-only behavioral memory log for LLM agents. It defines a minimal schema and commit interface for recording, promoting, and reusing successful action patterns without retraining. RLP underlies the six-experiment empirical study in *"Promotion Without Retrieval: Gene Monopoly, Confidence Asymmetry, and the Specification-Implementation Gap in Behavioral Memory Systems"* (v11), which culminates in Experiment 6 showing the protocol crossing break-even in live deployment under calibrated decay.
 
 [![Apache 2.0 License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](LICENSE)
