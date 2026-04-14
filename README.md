@@ -1,6 +1,6 @@
 # Reasoning Ledger Protocol (RLP)
 
-**Reasoning Ledger Protocol (RLP)** is an append-only behavioral memory log for LLM agents. It defines a minimal schema and commit interface for recording, promoting, and reusing successful action patterns without retraining. RLP underlies the four-experiment program in *"Promotion Without Retrieval: Gene Monopoly, Confidence Asymmetry, and Action Deserialization Failures in Behavioral Memory Systems"* (v4), and its post-publication Experiment 5 shows the protocol crossing break-even by 4× in live deployment while reproducing the gene-concentration failure mode as a diagnostic signal, not an optimization target.
+**Reasoning Ledger Protocol (RLP)** is an append-only behavioral memory log for LLM agents. It defines a minimal schema and commit interface for recording, promoting, and reusing successful action patterns without retraining. RLP underlies the six-experiment empirical study in *"Promotion Without Retrieval: Gene Monopoly, Confidence Asymmetry, and the Specification-Implementation Gap in Behavioral Memory Systems"* (v11), which culminates in Experiment 6 showing the protocol crossing break-even in live deployment under calibrated decay.
 
 [![Apache 2.0 License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](LICENSE)
 [![arXiv Paper](https://img.shields.io/badge/arXiv-2404.xxxxx-b31b1b.svg)](https://arxiv.org/abs/2404.xxxxx)
@@ -15,11 +15,11 @@ This repository contains the complete protocol specification, JSON Schema for co
 
 This specification accompanies the paper:
 
-**"Promotion Without Retrieval: Gene Monopoly, Confidence Asymmetry, and Action Deserialization Failures in Behavioral Memory Systems"**  
+**"Promotion Without Retrieval: Gene Monopoly, Confidence Asymmetry, and the Specification-Implementation Gap in Behavioral Memory Systems"**  
 *Yannis Dominique, VDSX Cloud*  
-[arXiv:2404.xxxxx](https://arxiv.org/abs/2404.xxxxx) (v4 includes Experiment 4 results)
+[arXiv:2604.xxxxx](https://arxiv.org/abs/2604.xxxxx) (v11 includes Experiment 6 results)
 
-**Post-publication validation**: As of April 8, 2026, the production system has accumulated 12 `dna_match_valid` events (24,432 tokens saved) in the 9.5 hours following Experiment 4 completion, crossing the break-even threshold by a factor of four and confirming the economic viability of the corrected architecture.
+**Post-publication validation**: The production system in Experiment 6 operated in live retrieval across 200 decisions, accumulating 23 `dna_match_valid` events (46,828 tokens saved), firing decay 11 times, and stabilizing top-gene share at 14.6%, formally crossing the break-even threshold on Jetson Orin Nano hardware without re-instantiating universal policy collapse.
 
 ## Specification
 
@@ -51,14 +51,14 @@ print('✓ Valid RLP commit')
 {
   "rlp_version": "1.0",
   "commit_type": "gene_promotion",
-  "timestamp": "2024-04-08T04:30:00Z",
+  "timestamp": "2026-04-12T04:30:00Z",
   "gene": {
     "id": "research:abc123",
     "domain": "research",
     "trigger": "search for machine learning papers",
     "action": "navigate to https://arxiv.org and search",
     "evidence": {
-      "first_observed": "2024-04-08T04:15:00Z",
+      "first_observed": "2026-04-12T04:15:00Z",
       "success_count": 3,
       "token_savings": 2036
     }
@@ -87,7 +87,7 @@ RLP operates at three architectural levels:
 
 ## License
 
-Copyright 2024 VDSX Cloud
+Copyright 2026 VDSX Cloud
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.

@@ -221,7 +221,7 @@ Invalid actions MUST be logged as `dna_match_invalid_action` with 0 tokens credi
 RLP implementations SHOULD maintain a Write-Ahead Log (WAL) for durability:
 
 ```
-/tmp/mumpix-experiment4-wal.ndjson
+/tmp/mumpix-experiment6-wal.ndjson
 ```
 
 Each line contains a complete JSON commit:
@@ -340,6 +340,7 @@ RLP implementations should monitor for these failure modes:
 8. **Metric Integrity Failure** - Single bucket hides outcome diversity
 9. **Promotion Guard Missing** - Empty actions accepted into runtime
 10. **Action Deserialization Failure** - Empty/malformed actions credited as reuse (Gap #10)
+11. **Confidence Decay Miscalibration** - Anti-monopoly threshold set below natural baseline suppresses healthy specialization (Gap #11)
 
 ## 8. Security Considerations
 
@@ -394,7 +395,7 @@ RLP v1.0 implementations MUST:
 
 ## 11. References
 
-1. Dominique, Y. "Promotion Without Retrieval: Gene Monopoly, Confidence Asymmetry, and Action Deserialization Failures in Behavioral Memory Systems." arXiv:2404.xxxxx (2024)
+1. Dominique, Y. "Promotion Without Retrieval: Gene Monopoly, Confidence Asymmetry, and the Specification-Implementation Gap in Behavioral Memory Systems." arXiv:2604.xxxxx (2026)
 2. JSON Schema specification: https://json-schema.org/
 3. ISO 8601 Date and Time Format: https://www.iso.org/iso-8601-date-and-time-format.html
 
@@ -410,7 +411,7 @@ See [rlp-schema.json](rlp-schema.json) for complete JSON Schema definition.
 {
   "rlp_version": "1.0",
   "commit_type": "gene_promotion",
-  "timestamp": "2024-04-08T04:30:00Z",
+  "timestamp": "2026-04-12T04:30:00Z",
   "gene": {
     "id": "research:abc123",
     "locus": "research:search for machine learning papers:navigate to https://arxiv.org and search",
@@ -423,8 +424,8 @@ See [rlp-schema.json](rlp-schema.json) for complete JSON Schema definition.
     "usage_count": 0
   },
   "evidence": {
-    "first_observed": "2024-04-08T04:15:00Z",
-    "last_observed": "2024-04-08T04:25:00Z",
+    "first_observed": "2026-04-12T04:15:00Z",
+    "last_observed": "2026-04-12T04:25:00Z",
     "success_count": 3,
     "failure_count": 0,
     "token_savings": 6108,
@@ -439,7 +440,7 @@ See [rlp-schema.json](rlp-schema.json) for complete JSON Schema definition.
     "ledger_depth": 1525
   },
   "metadata": {
-    "experiment_id": "exp4",
+    "experiment_id": "exp6",
     "epsilon_arch": 0.2,
     "monopoly_brakes": true
   }
@@ -452,7 +453,7 @@ See [rlp-schema.json](rlp-schema.json) for complete JSON Schema definition.
 {
   "rlp_version": "1.0",
   "commit_type": "execution_record",
-  "timestamp": "2024-04-08T04:31:00Z",
+  "timestamp": "2026-04-12T04:31:00Z",
   "execution": {
     "decision_source": "dna_gene",
     "metric_bucket": "dna_match_valid",
@@ -479,7 +480,7 @@ See [rlp-schema.json](rlp-schema.json) for complete JSON Schema definition.
 {
   "rlp_version": "1.0",
   "commit_type": "execution_record",
-  "timestamp": "2024-04-08T04:32:00Z",
+  "timestamp": "2026-04-12T04:32:00Z",
   "execution": {
     "decision_source": "dna_gene_invalid_action",
     "metric_bucket": "dna_match_invalid_action",
@@ -502,7 +503,7 @@ See [rlp-schema.json](rlp-schema.json) for complete JSON Schema definition.
 
 ---
 
-**Copyright 2024 VDSX Cloud**  
+**Copyright 2026 VDSX Cloud**  
 **License: Apache 2.0**  
 **Version: 1.0.0**  
-**Date: April 8, 2024**
+**Date: April 2026**
