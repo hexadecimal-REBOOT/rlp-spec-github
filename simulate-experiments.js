@@ -6,7 +6,7 @@
  * This file intentionally avoids publishing production retrieval logic,
  * ranking code, decay mechanics, or runtime architecture. It only checks
  * that the public numerical claims in the paper are internally consistent.
-+ *
+ *
  * Run: node simulate-experiments.js
  */
 

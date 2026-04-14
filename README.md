@@ -28,8 +28,26 @@ This specification accompanies the paper:
 - **[reasoning-ledger-protocol-v1.0.md](reasoning-ledger-protocol-v1.0.md)** - Complete protocol documentation
 - **[rlp-schema.json](rlp-schema.json)** - JSON Schema for RLP commit validation
 - **[validate-example.py](validate-example.py)** - Example validation script
+- **[simulate-experiments.js](simulate-experiments.js)** - Public verifier for the paper's reported metrics
+- **[verify-public.sh](verify-public.sh)** - One-command public verification entrypoint
 
 ## Quick Start
+
+### Public Verification
+
+Readers should be able to verify two things from this repository:
+
+1. **The protocol code works**: the schema and example commits validate successfully.
+2. **The paper claims are numerically consistent**: the published break-even and experiment totals reconcile from the reported numbers.
+
+Run:
+
+```bash
+chmod +x verify-public.sh
+./verify-public.sh
+```
+
+This proves the public protocol artifacts are valid and that the paper's reported headline metrics are internally consistent. It does **not** publish the private production retrieval/runtime code used in deployment.
 
 ### Schema Validation
 

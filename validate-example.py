@@ -32,6 +32,7 @@ def main():
     """Main validation function."""
     print("RLP Schema Validator")
     print("=" * 50)
+    validation_failed = False
     
     # Load schema
     try:
@@ -47,6 +48,13 @@ def main():
     
     examples = schema.get('examples', [])
     for i, example in enumerate(examples, 1):
+        if not isinstance(example, dict):
+            print(f"\nExample {i}: skipped (non-object schema example)")
+            continue
+        if 'rlp_version' not in example or 'commit_type' not in example:
+            print(f"\nExample {i}: skipped (not a complete RLP commit example)")
+            continue
+
         print(f"\nExample {i}: {example.get('commit_type', 'unknown')}")
         if validate_commit(schema, example):
             print(f"  Type: {example.get('commit_type')}")
@@ -54,6 +62,8 @@ def main():
                 print(f"  Gene: {example['gene'].get('id', 'unknown')}")
             if 'execution' in example:
                 print(f"  Decision: {example['execution'].get('decision_source', 'unknown')}")
+        else:
+            validation_failed = True
     
     # Create and validate a simple test commit
     print("\nCreating test commit:")
@@ -84,10 +94,12 @@ def main():
     print(f"Test commit: {test_commit['commit_type']}")
     if validate_commit(schema, test_commit):
         print("✓ Test commit is valid")
+    else:
+        validation_failed = True
     
     print("\n" + "=" * 50)
     print("Validation complete")
-    return 0
+    return 1 if validation_failed else 0
 
 if __name__ == "__main__":
     sys.exit(main())
