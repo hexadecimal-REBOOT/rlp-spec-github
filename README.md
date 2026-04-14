@@ -30,6 +30,7 @@ This specification accompanies the paper:
 - **[reasoning-ledger-protocol-v1.0.md](reasoning-ledger-protocol-v1.0.md)** - Complete protocol documentation
 - **[rlp-schema.json](rlp-schema.json)** - JSON Schema for RLP commit validation
 - **[validate-example.py](validate-example.py)** - Example validation script
+- **[rlp-paper-v11.pdf](rlp-paper-v11.pdf)** - Final public PDF for the accompanying v11 paper
 - **[simulate-experiments.js](simulate-experiments.js)** - Public verifier for the paper's reported metrics
 - **[verify-public.sh](verify-public.sh)** - One-command public verification entrypoint
 
