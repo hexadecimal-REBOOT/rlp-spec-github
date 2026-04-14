@@ -206,7 +206,7 @@
         "system_fingerprint": {
           "type": "string",
           "description": "System identifier",
-          "examples": ["jetson-orin-001"]
+          "examples": ["edge-node-001"]
         },
         "agent_version": {
           "type": "string",
@@ -317,7 +317,7 @@
       "provenance": {
         "previous_commit": "sha256:abc123def456",
         "commit_hash": "sha256:def456abc123",
-        "system_fingerprint": "jetson-orin-001",
+        "system_fingerprint": "edge-node-001",
         "agent_version": "1.0.0",
         "ledger_depth": 1525
       },

@@ -214,14 +214,14 @@ Before crediting behavioral reuse, systems MUST validate:
 
 Invalid actions MUST be logged as `dna_match_invalid_action` with 0 tokens credited.
 
-## 5. Write-Ahead Log (WAL) Format
+## 5. Audit Log Format
 
-### 5.1 WAL Structure
+### 5.1 Audit Log Structure
 
-RLP implementations SHOULD maintain a Write-Ahead Log (WAL) for durability:
+RLP implementations SHOULD maintain an append-only audit log for durability:
 
 ```
-/tmp/mumpix-experiment6-wal.ndjson
+audit-log.ndjson
 ```
 
 Each line contains a complete JSON commit:
@@ -232,99 +232,15 @@ Each line contains a complete JSON commit:
 {"ts": 1775639398576, "type": "promotion_record", "gene_id": "...", ...}
 ```
 
-### 5.2 WAL Fields
+### 5.2 Audit Log Fields
 
 - `ts` - Timestamp in milliseconds since epoch
 - `type` - Commit type (execution_record, promotion_record, etc.)
 - Additional fields per commit type
 
-## 6. API Endpoints (Reference)
+## 6. Transport and Runtime Boundaries
 
-### 6.1 Health Check
-
-```
-GET /v1/health
-```
-
-**Response:**
-```json
-{
-  "ok": true,
-  "data": {
-    "uptime": 40187,
-    "genes": {
-      "total": 10,
-      "promoted": 6,
-      "by_domain": {
-        "research": 8,
-        "navigation": 2
-      }
-    },
-    "coverage": {
-      "current": {
-        "totalExecutions": 34176,
-        "hitRate": 0.000146
-      }
-    }
-  }
-}
-```
-
-### 6.2 Gene Listing
-
-```
-GET /v1/dna/genes?domain=research&promoted=true
-```
-
-**Response:**
-```json
-{
-  "ok": true,
-  "data": {
-    "genes": [
-      {
-        "id": "g_mnp9ygmf_tw6",
-        "locus": "research:search for machine learning papers:navigate to https://arxiv.org and search",
-        "domain": "research",
-        "trigger": "search for machine learning papers",
-        "action": "navigate to https://arxiv.org and search for \"machine learning\"",
-        "promoted": 1,
-        "confidence": 0.9
-      }
-    ]
-  }
-}
-```
-
-### 6.3 Match Test (Debug)
-
-```
-POST /v1/dna/debug/match-test
-```
-
-**Request:**
-```json
-{
-  "context": "TurboQuant KV cache compression for LLM inference",
-  "domain": "research",
-  "threshold": 0.3
-}
-```
-
-**Response:**
-```json
-{
-  "ok": true,
-  "data": {
-    "namespace": "agent",
-    "context": "TurboQuant KV cache compression for LLM inference",
-    "domain": "universal",
-    "expressedCount": 0,
-    "totalGenes": 10,
-    "matchResults": [...]
-  }
-}
-```
+RLP is a protocol and schema specification. Transport, APIs, storage layout, and runtime orchestration are intentionally left implementation-specific and are out of scope for this public document.
 
 ## 7. Failure Modes Taxonomy
 
@@ -435,12 +351,12 @@ See [rlp-schema.json](rlp-schema.json) for complete JSON Schema definition.
   "provenance": {
     "previous_commit": "sha256:abc123def456",
     "commit_hash": "sha256:def456abc123",
-    "system_fingerprint": "jetson-orin-001",
+    "system_fingerprint": "edge-node-001",
     "agent_version": "1.0.0",
     "ledger_depth": 1525
   },
   "metadata": {
-    "experiment_id": "exp6",
+    "experiment_id": "public-example",
     "epsilon_arch": 0.2,
     "monopoly_brakes": true
   }
@@ -467,7 +383,7 @@ See [rlp-schema.json](rlp-schema.json) for complete JSON Schema definition.
   "provenance": {
     "previous_commit": "sha256:def456abc123",
     "commit_hash": "sha256:ghi789def456",
-    "system_fingerprint": "jetson-orin-001",
+    "system_fingerprint": "edge-node-001",
     "agent_version": "1.0.0",
     "ledger_depth": 1526
   }
@@ -494,7 +410,7 @@ See [rlp-schema.json](rlp-schema.json) for complete JSON Schema definition.
   "provenance": {
     "previous_commit": "sha256:ghi789def456",
     "commit_hash": "sha256:jkl012ghi789",
-    "system_fingerprint": "jetson-orin-001",
+    "system_fingerprint": "edge-node-001",
     "agent_version": "1.0.0",
     "ledger_depth": 1527
   }

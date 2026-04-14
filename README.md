@@ -11,6 +11,8 @@ The Reasoning Ledger Protocol (RLP) defines an append-only, auditable framework 
 
 This repository contains the complete protocol specification, JSON Schema for commit validation, and example validation scripts. The protocol is designed to be implementation-agnostic while ensuring interoperability across different behavioral memory systems.
 
+This public repository intentionally omits production retrieval/runtime code. It is meant to document the protocol and support the paper's claims without exposing deployment-specific implementation details.
+
 ## Academic Reference
 
 This specification accompanies the paper:
@@ -65,7 +67,7 @@ print('✓ Valid RLP commit')
   },
   "provenance": {
     "previous_commit": "sha256:abc123...",
-    "system_fingerprint": "jetson-orin-001"
+    "system_fingerprint": "edge-node-001"
   }
 }
 ```
